@@ -1,0 +1,62 @@
+$primaryColor: #2d3136;
+$secondColor: #ffffff;
+$navbarOpen: true;
+ // uzywamy PROCENTOW zamiast vw i vh
+.navbar{
+    background-color: $primaryColor;
+    height: 100vh;
+    width: 15vw;
+    color: $secondColor;
+    position: fixed;
+     &.collapsed {
+        width: 50px;
+        overflow: hidden;
+      .arrow {
+        transform: rotate(180deg);
+    }
+      .dashboardWithtText {
+        visibility: hidden;
+      }
+      .dashboardIcon {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 15px;
+      }
+      .analitycs {
+        visibility: hidden;
+      }
+     }
+    .dashboard {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding-top: 20px;
+    }
+    .dashboard:hover {
+        color: aqua;
+        border-left: 3px solid aqua;
+    }
+
+    .analitycs {
+        width: 15vw;
+        height: 10vh;
+        background-color: #393e44;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+    .arrow:hover{
+        cursor: pointer;
+    }
+    .classArrow {
+        position: absolute;
+        bottom: 10px;
+        left: 10px
+    }
+}
+
+
