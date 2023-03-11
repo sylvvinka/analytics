@@ -1,34 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
+import { FiSettings } from "react-icons/fi";
+import { BiSearch } from "react-icons/bi";
+import { TbBellRinging2 } from "react-icons/tb";
 import "./Navbar.scss";
-import { RxDashboard } from "react-icons/rx";
-import { ImArrowLeft } from "react-icons/im";
 
 const Navbar = () => {
-  const [isNavbarOpen, setIsNavbarOpen] = useState(true);
-  const [navbarClass, setNavbarClass] = useState("navbar");
-  console.log(isNavbarOpen);
-
-  const toggleNavbar = () => {
-    console.log("funkcja klik");
-    setIsNavbarOpen((prevstate) => !prevstate);
-    setNavbarClass((prevState) =>
-      prevState === "navbar" ? "navbar collapsed" : "navbar"
-    );
-  };
-
   return (
     <>
-      <div className={navbarClass}>
-        <div className="analitycs">Analitycs</div>
-        <div className="dashboard">
-          <RxDashboard className="dashboardIcon" />
-          <div className="dashboardWithtText">Dashboard</div>
+      <div className="navbar-container">
+        <div className="analytics-container">Analytics</div>
+        <div className="input-container">
+          <input placeholder="Search" className="input-field" />
+          <BiSearch className="search-icon" />
         </div>
-        <div className="classArrow">
-          <ImArrowLeft className="arrow" onClick={toggleNavbar} />
+        <div className="ring-icon">
+          <TbBellRinging2 />
+        </div>
+        <div className="settings-icon">
+          <FiSettings />
         </div>
       </div>
-      {/* {isNavbarOpen && <div className="navbar-content"></div>} */}
     </>
   );
 };
